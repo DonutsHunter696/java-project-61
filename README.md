@@ -4,3 +4,6 @@
 
 ### Even:
 ![screenshot](app/screenshots/Even.png)
+
+### Calc:
+![screenshot](app/screenshots/Calc.png)

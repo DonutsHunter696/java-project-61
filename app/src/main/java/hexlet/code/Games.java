@@ -8,6 +8,9 @@ public class Games {
             case "Even":
                 System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
                 break;
+            case "Calc":
+                System.out.println("What is the result of the expression?");
+                break;
             default:
                 break;
         }
@@ -55,6 +58,13 @@ public class Games {
                 question = Integer.toString(getRandomNumber(start, stop));
                 result = isEven(Integer.parseInt(question));
                 break;
+            case "Calc":
+                num1 = getRandomNumber(start, stop);
+                num2 = getRandomNumber(start, stop);
+                String operation = getRandomOperation();
+                question = num1 + " " + operation + " " + num2;
+                result = Integer.toString(calculateResult(num1, num2, operation));
+                break;
             default:
                 break;
         }
@@ -65,7 +75,26 @@ public class Games {
         return (int) (Math.random() * stop) + start;
     }
 
+    public static String getRandomOperation() {
+        final int count = 4;
+        String operation = Integer.toString((int) (Math.random() * count) + 1);
+
+        return switch (operation) {
+            case "2" -> "-";
+            case "3" -> "*";
+            default -> "+";
+        };
+    }
+
     public static String isEven(int number) {
         return number % 2 == 0 ? "yes" : "no";
+    }
+
+    public static int calculateResult(int num1, int num2, String operation) {
+        return switch (operation) {
+            case "-" -> num1 - num2;
+            case "*" -> num1 * num2;
+            default -> num1 + num2;
+        };
     }
 }

@@ -8,6 +8,7 @@ public class App {
                 Please enter the game number and press Enter.
                 1 - Greet
                 2 - Even
+                3 - Calc
                 0 - Exit""");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Your choice: ");
@@ -18,6 +19,9 @@ public class App {
         switch (gameNumber) {
             case "2":
                 Games.playGame("Even", userName);
+                break;
+            case "3":
+                Games.playGame("Calc", userName);
                 break;
             default:
                 break;
