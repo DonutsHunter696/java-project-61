@@ -11,6 +11,9 @@ public class Games {
             case "Calc":
                 System.out.println("What is the result of the expression?");
                 break;
+            case "GCD":
+                System.out.println("Find the greatest common divisor of given numbers.");
+                break;
             default:
                 break;
         }
@@ -65,6 +68,12 @@ public class Games {
                 question = num1 + " " + operation + " " + num2;
                 result = Integer.toString(calculateResult(num1, num2, operation));
                 break;
+            case "GCD":
+                num1 = getRandomNumber(start, stop);
+                num2 = getRandomNumber(start, stop);
+                question = num1 + " " + num2;
+                result = Integer.toString(getGCD(num1, num2));
+                break;
             default:
                 break;
         }
@@ -96,5 +105,17 @@ public class Games {
             case "*" -> num1 * num2;
             default -> num1 + num2;
         };
+    }
+
+    public static int getGCD(int num1, int num2) {
+        int lesser = Math.min(num1, num2);
+
+        while (lesser > 1) {
+            if (num1 % lesser == 0 && num2 % lesser == 0) {
+                return lesser;
+            }
+            lesser -= 1;
+        }
+        return 1;
     }
 }

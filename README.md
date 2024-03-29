@@ -7,3 +7,6 @@
 
 ### Calc:
 ![screenshot](app/screenshots/Calc.png)
+
+### GCD:
+![screenshot](app/screenshots/Calc.png)
