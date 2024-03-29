@@ -9,6 +9,7 @@ public class App {
                 1 - Greet
                 2 - Even
                 3 - Calc
+                4 - GCD
                 0 - Exit""");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Your choice: ");
@@ -22,6 +23,9 @@ public class App {
                 break;
             case "3":
                 Games.playGame("Calc", userName);
+                break;
+            case "4":
+                Games.playGame("GCD", userName);
                 break;
             default:
                 break;
