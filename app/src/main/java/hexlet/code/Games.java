@@ -17,6 +17,9 @@ public class Games {
             case "Progression":
                 System.out.println("What number is missing in the progression?");
                 break;
+            case "Prime":
+                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+                break;
             default:
                 break;
         }
@@ -89,6 +92,11 @@ public class Games {
                 result = hideElementAtIndex(progression, missingIndex);
                 question = formProgressionString(progression);
                 break;
+            case "Prime":
+                num1 = getRandomNumber(start, stop);
+                question = Integer.toString(num1);
+                result = isPrime(num1);
+                break;
             default:
                 break;
         }
@@ -160,5 +168,16 @@ public class Games {
             res.append(element).append(" ");
         }
         return res.toString();
+    }
+
+    public static String isPrime(int number) {
+        int count = 0;
+
+        for (var i = 1; i < number / 2 + 1; i++) {
+            if (number % i == 0) {
+                count += 1;
+            }
+        }
+        return number != 1 && number != 0 && count < 2 ? "yes" : "no";
     }
 }

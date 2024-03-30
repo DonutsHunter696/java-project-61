@@ -11,6 +11,7 @@ public class App {
                 3 - Calc
                 4 - GCD
                 5 - Progression
+                6 - Prime
                 0 - Exit""");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Your choice: ");
@@ -30,6 +31,9 @@ public class App {
                 break;
             case "5":
                 Games.playGame("Progression", userName);
+                break;
+            case "6":
+                Games.playGame("Prime", userName);
                 break;
             default:
                 break;
