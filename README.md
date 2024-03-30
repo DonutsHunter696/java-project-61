@@ -13,3 +13,6 @@
 
 ### Progression:
 ![screenshot](app/screenshots/Progression.png)
+
+### Prime:
+![screenshot](app/screenshots/Prime.png)
