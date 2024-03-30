@@ -10,3 +10,6 @@
 
 ### GCD:
 ![screenshot](app/screenshots/Calc.png)
+
+### Progression:
+![screenshot](app/screenshots/Progression.png)

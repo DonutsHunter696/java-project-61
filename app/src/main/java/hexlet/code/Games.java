@@ -14,6 +14,9 @@ public class Games {
             case "GCD":
                 System.out.println("Find the greatest common divisor of given numbers.");
                 break;
+            case "Progression":
+                System.out.println("What number is missing in the progression?");
+                break;
             default:
                 break;
         }
@@ -74,6 +77,18 @@ public class Games {
                 question = num1 + " " + num2;
                 result = Integer.toString(getGCD(num1, num2));
                 break;
+            case "Progression":
+                final int arrLengthMax = 10;
+                final int arrLengthMin = 5;
+                start = 0;
+                String[] progression = new String[getRandomNumber(arrLengthMin, arrLengthMax)];
+                int missingIndex = getRandomNumber(start, progression.length);
+                int first = getRandomNumber(start, stop);
+                int step = getRandomNumber(start, stop);
+                fillProgression(progression, first, step);
+                result = hideElementAtIndex(progression, missingIndex);
+                question = formProgressionString(progression);
+                break;
             default:
                 break;
         }
@@ -117,5 +132,33 @@ public class Games {
             lesser -= 1;
         }
         return 1;
+    }
+
+    public static void fillProgression(String[] progression, int start, int step) {
+        for (var i = 0; i < progression.length; i += 1) {
+            progression[i] = Integer.toString(start);
+            start += step;
+        }
+    }
+
+    public static String hideElementAtIndex(String[] arr, int index) {
+        String hidden = "";
+
+        for (var i = 0; i < arr.length; i += 1) {
+            if (i == index) {
+                hidden = arr[i];
+                arr[i] = "..";
+            }
+        }
+        return hidden;
+    }
+
+    public static String formProgressionString(String[] progression) {
+        StringBuilder res = new StringBuilder();
+
+        for (var element: progression) {
+            res.append(element).append(" ");
+        }
+        return res.toString();
     }
 }
